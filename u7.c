@@ -30,6 +30,15 @@
 #include <string.h>
 #include "asoundlib.h"
 
+const char * progname(const char * argv0)
+{
+  const char * name;
+
+  name = strrchr(argv0, '/');
+  if (name == NULL) return argv0;
+  return name + 1;
+}
+
 struct mixer * u7_mixer_open(const char * name)
 {
   int card;
@@ -89,7 +98,7 @@ int main(int argc, char ** argv)
       "   defaults to \"%s\"\n"
       " <mixer_control_name> is ALSA mixer control name,\n"
       "   defaults to \"%s\"\n",
-      strrchr(argv[0], '/' + 1),
+      progname(argv[0]),
       device,
       mixer_name,
       control);
