@@ -1,0 +1,18 @@
+u7 is a program for controlling ALSA volume through Linux input
+device.
+
+Input device events are read and when KEY_VOLUMEDOWN or KEY_VOLUMEUP
+is received, ALSA volume is adjusted.
+
+The program was designed for Asus Xonar U7 USB soundcard, but is
+probably also useful with other devices. For Xonar U7, the program is
+expected to work without supplying additional command-line
+arguments. To see possible command-line arguments, run the program
+with --help argument.
+
+The program could possibly be built like this:
+
+cc *.c -o u7
+
+The u7.c file is written by Nedko Arnaudov. The mixer.c, asound.h
+and asoundlib.h files are borrowed from tinyalsa project.
