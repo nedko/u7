@@ -78,7 +78,7 @@ int main(int argc, char ** argv)
 
   device = "/dev/input/by-id/usb-ASUS_Xonar_U7-event-if04";
   mixer_name = "Xonar U7";	       /* alsa mixer name */
-  control = "Speaker Playback Volume"; /* alsa mixer control name */
+  control = "PCM Playback Volume"; /* alsa mixer control name */
 
   if (argc == 4)
   {
